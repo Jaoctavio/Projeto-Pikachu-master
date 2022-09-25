@@ -1,4 +1,5 @@
 const fetchPokemon = async (pokemon) => {
+  console.log("Tô no fetch");
   return await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
     .then(async (data) => {
       return await data.json();
@@ -11,14 +12,10 @@ const fetchPokemon = async (pokemon) => {
 fetch("../extern.html")
   .then((res) => res.text())
   .then((data) => {
+    console.log("Tô no script ");
     document.body.innerHTML = data;
   })
   .then(() => {
-    function Darkness() {
-      var element = document.body;
-      element.classList.toggle("dark-mode");
-    }
-
     const pokemonName = document.querySelector(".pokemon__name");
     const pokemonNumber = document.querySelector(".pokemon__number");
     const pokemonImage = document.querySelector(".pokemon__image");
@@ -72,3 +69,8 @@ fetch("../extern.html")
 
     renderPokemon(searchPokemon);
   });
+
+function Darkness() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}

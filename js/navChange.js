@@ -1,4 +1,5 @@
 function changeBody(page) {
+  console.log("Tô no NavChange");
   fetch(page)
     .then((res) => res.text())
     .then((res) => {
