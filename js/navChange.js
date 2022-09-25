@@ -1,9 +1,13 @@
 function changeBody(page) {
-  console.log("Tô no NavChange");
   fetch(page)
     .then((res) => res.text())
     .then((res) => {
+      const isPokedexBody = page === './extern.html' ? true : false;
       document.body.innerHTML = res;
+      
+      if (isPokedexBody) {
+        getPokemonData();
+      }
     });
 }
 
