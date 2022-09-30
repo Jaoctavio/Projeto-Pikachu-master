@@ -2,9 +2,9 @@ function changeBody(page) {
   fetch(page)
     .then((res) => res.text())
     .then((res) => {
-      const isPokedexBody = page === './extern.html' ? true : false;
+      const isPokedexBody = page === "./extern.html" ? true : false;
       document.body.innerHTML = res;
-      
+
       if (isPokedexBody) {
         getPokemonData();
       }
